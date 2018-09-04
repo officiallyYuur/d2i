@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
 
         //Initialize Hud with empty arrays
         if (savedInstanceState != null) {
-            Log.v("TAG", "OnCreate: savedInstanceState != null");
             mTransactions = savedInstanceState.getParcelableArrayList("transactions");
             mDailyBalances = savedInstanceState.getParcelableArrayList("dailyBalances");
             int mDatePickeryear = Integer.valueOf(savedInstanceState.getString("mDatePickerYear"));
@@ -79,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
             mDatePicker = new GregorianCalendar(mDatePickeryear, mDatePickermonth, mDatePickerday);
 
         } else {
-            Log.v("TAG", "OnCreate: savedInstanceState == null");
             mTransactions = new ArrayList<>();
                 readTransactionsFromFile(this);
                 Type transactionListType = new TypeToken<ArrayList<Transaction>>(){}.getType();
@@ -90,18 +88,16 @@ public class MainActivity extends AppCompatActivity {
                     mTransactions.add(new Transaction(mToday, "revenue", "Sample Income", 0, "due"));
                     mTransactions.add(new Transaction(mToday, "expense", "Sample bill", 0, "due"));
                 }
-                Log.v("MainActivity", "OnCreate: TransactionArray = " + TransactionArray);
-                Log.v("TAG", " OnCreate: mTransactions = " + mTransactions);
 
             mDailyBalances = new ArrayList<>();
                 readBalanceFromFile(this);
                 Type balanceListType = new TypeToken<ArrayList<DailyBalance>>(){}.getType();
                 ArrayList<DailyBalance> BalanceArray = gson.fromJson(readBalanceFromFile(this), balanceListType);
                 if (BalanceArray != null) {
-                    Log.v("MainActivity", "OnCreate: BalanceArray != null");
+
                     mDailyBalances = BalanceArray;
                 } else {
-                    Log.v("MainActivity", "OnCreate: BalanceArray == null");
+
                     mDailyBalances.add(new DailyBalance(mToday, 0));
                 }
                 Log.v("MainActivity", "OnCreate: BalanceArray = " + BalanceArray);
