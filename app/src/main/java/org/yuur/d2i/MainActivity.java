@@ -57,16 +57,14 @@ public class MainActivity extends AppCompatActivity {
     // *** ON CREATE *** //
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
-        Log.v("TAG", "OnCreate: App Started");
         super.onCreate(savedInstanceState);
 
         // *** INITIALIZE DATA FOR THE HUD *** //
         // Initialize Today's Date
         GregorianCalendar mToday = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
-        mTodayDay = mToday.get(Calendar.DAY_OF_MONTH);
+        mTodayDay = mToday.get(Calendar.DAY_OF_MONTH) +1;
         mTodayMonth = mToday.get(Calendar.MONTH);
         mTodayYear = mToday.get(Calendar.YEAR);
-        Log.v("TAG", "OnCreate: mToday set to = " + mTodayDay + "/" + mTodayMonth + "/" + mTodayYear);
 
         //Initialize Hud with empty arrays
         if (savedInstanceState != null) {
@@ -94,19 +92,14 @@ public class MainActivity extends AppCompatActivity {
                 Type balanceListType = new TypeToken<ArrayList<DailyBalance>>(){}.getType();
                 ArrayList<DailyBalance> BalanceArray = gson.fromJson(readBalanceFromFile(this), balanceListType);
                 if (BalanceArray != null) {
-
                     mDailyBalances = BalanceArray;
                 } else {
-
                     mDailyBalances.add(new DailyBalance(mToday, 0));
                 }
-                Log.v("MainActivity", "OnCreate: BalanceArray = " + BalanceArray);
-                Log.v("TAG", " OnCreate: mDailyBalances = " + mDailyBalances);
                 int x = 0;
                 int y = 0;
                 int z ;
                 if((mDailyBalances.get(0).getBalanceDate()).before(mToday))  {
-                    Log.v("TAG", " OnCreate: mDailyBalances: loop");
                     for (int i=0; i < mTransactions.size(); i++) {
                         if((mTransactions.get(i).getTransactionDate().before(mToday)) && !(mTransactions.get(i).getTransactionDate().before(mDailyBalances.get(0).getBalanceDate()))){
                             if (mTransactions.get(i).getTransactionType().equals("revenue")){
@@ -118,9 +111,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                     z = mDailyBalances.get(0).getBalance() + x - y;
-                    Log.v("TAG", " OnCreate: mDailyBalances: z = " + z);
-                    Log.v("TAG", " OnCreate: mDailyBalances: x = " + x);
-                    Log.v("TAG", " OnCreate: mDailyBalances: y = " + y);
                     mDailyBalances.add(new DailyBalance(mToday, z));
                     mDailyBalances.remove(0);
                 }
