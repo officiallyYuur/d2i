@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/YellowA400"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/main_content_nested_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/main_content_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_hudFragMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="8dp"
+                android:elevation="1dp"
+                app:cardCornerRadius="1dp">
+
+                <fragment
+                    android:id="@+id/hudFragMain"
+                    android:name="org.yuur.d2i.FragmentHud"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_CALENDAR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:elevation="1dp"
+                app:cardCornerRadius="1dp">
+
+                <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                    android:id="@+id/calendarView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/White"
+                    android:padding="10dp"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="4dp"
+                    app:mcv_dateTextAppearance="@style/TextAppearance.AppCompat.Menu"
+                    app:mcv_headerTextAppearance="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title"
+                    app:mcv_selectionColor="@color/YellowA400" />
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_detailed_revenue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_marginBottom="12dp"
+                android:elevation="1dp"
+                app:cardBackgroundColor="@color/LightGreen50"
+                app:cardCornerRadius="2dp">
+
+                <TextView
+                    android:id="@+id/detailedRevenueTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Revenues"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="14sp" />
+
+                <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/nestedScroll_detailed_revenue"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_detailed_revenue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <fragment
+                            android:id="@+id/RevenueView"
+                            android:name="org.yuur.d2i.FragmentDetailRevenues"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="24dp"
+                            android:layout_marginTop="24dp" />
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_detailed_expense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_marginBottom="12dp"
+                android:elevation="1dp"
+                app:cardBackgroundColor="@color/Red50"
+                app:cardCornerRadius="2dp">
+
+                <TextView
+                    android:id="@+id/detailedExpensesTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Expenses"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="14sp" />
+
+                <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/nestedScroll_detailed_expense"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_detailed_expense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <fragment
+                            android:id="@+id/ExpenseView"
+                            android:name="org.yuur.d2i.FragmentDetailExpenses"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="24dp"
+                            android:layout_marginTop="24dp" />
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:src="@drawable/if_icon_add"
+        android:tint="@android:color/transparent"
+        app:backgroundTint="@color/Green500"
+        app:elevation="6dp"
+        app:fabSize="mini"
+        app:pressedTranslationZ="12dp"
+        app:rippleColor="@android:color/holo_green_dark" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabMinus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_margin="16dp"
+        android:src="@drawable/if_icon_minus"
+        android:tint="@android:color/transparent"
+        app:backgroundTint="@color/Red500"
+        app:elevation="6dp"
+        app:fabSize="mini"
+        app:pressedTranslationZ="12dp"
+        app:rippleColor="@android:color/holo_red_dark" />
+
+</android.support.design.widget.CoordinatorLayout>

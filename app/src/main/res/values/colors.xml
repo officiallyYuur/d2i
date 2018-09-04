@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#1A237E</color>
+    <color name="colorAccent">#FFde03</color>
+
+    <color name="White">#FFFFFF</color>
+    <color name="Black">#000000</color>
+    <color name="GrayIcons">#232F34</color>
+
+    <color name="Indigo50">#E8EAF6</color>
+    <color name="Indigo900">#1A237E</color>
+
+    <color name="Red50">#FFEBEE</color>
+    <color name="Red500">#F44336</color>
+    <color name="Red900">#B71C1C</color>
+
+    <color name="YellowA400">#FFEA00</color>
+
+    <color name="Green500">#4CAF50</color>
+    <color name="Green900">#1B5E20</color>
+
+    <color name="LightGreen50">#F1F8E9</color>
+</resources>
