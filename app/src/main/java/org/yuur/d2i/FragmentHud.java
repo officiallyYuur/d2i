@@ -86,7 +86,7 @@ public class FragmentHud extends Fragment {
         tvRevenueAmt.setText("+ " +revenue);
         tvExpense.setText("Expenses Summary");
         tvExpenseAmt.setText("- " + expense);
-        tvEndBalance.setText("Final Balance \n on " + datePicker);
+        tvEndBalance.setText("Daily-Closing Balance \n on " + datePicker);
         tvEndBalanceAmt.setText(endBalance);
         return view;
     }

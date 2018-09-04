@@ -5,7 +5,7 @@
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/YellowA400"
+    android:background="@color/YuurOpaque"
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
@@ -164,12 +164,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
-        android:layout_margin="16dp"
+        android:layout_margin="12dp"
         android:src="@drawable/if_icon_add"
         android:tint="@android:color/transparent"
         app:backgroundTint="@color/Green500"
         app:elevation="6dp"
-        app:fabSize="mini"
+        app:fabSize="normal"
         app:pressedTranslationZ="12dp"
         app:rippleColor="@android:color/holo_green_dark" />
 
@@ -178,12 +178,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|left"
-        android:layout_margin="16dp"
+        android:layout_margin="12dp"
         android:src="@drawable/if_icon_minus"
         android:tint="@android:color/transparent"
         app:backgroundTint="@color/Red500"
         app:elevation="6dp"
-        app:fabSize="mini"
+        app:fabSize="normal"
         app:pressedTranslationZ="12dp"
         app:rippleColor="@android:color/holo_red_dark" />
 

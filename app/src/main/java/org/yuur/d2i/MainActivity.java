@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         // *** INITIALIZE DATA FOR THE HUD *** //
         // Initialize Today's Date
         GregorianCalendar mToday = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
-        mTodayDay = mToday.get(Calendar.DAY_OF_MONTH) +1;
+        mTodayDay = mToday.get(Calendar.DAY_OF_MONTH);
         mTodayMonth = mToday.get(Calendar.MONTH);
         mTodayYear = mToday.get(Calendar.YEAR);
 
@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.v("TAG", "OnCreate: activity_main layout setView ");
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        getWindow().setStatusBarColor(getResources().getColor(R.color.Black));
+        getWindow().setStatusBarColor(getResources().getColor(R.color.Yuur));
         Log.v("TAG", "OnCreate: orientation = portrait ");
         Log.v("TAG", "OnCreate: updateTransactions(): method Called ");
         updateTransactions();
